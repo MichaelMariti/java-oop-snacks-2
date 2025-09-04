@@ -9,8 +9,11 @@
 
 package esercizio_3;
 
-public class Utente {
+
+
+public class Utente extends UtenteAstratto{
     private String nome;
+    private static final String RAZZA = "umano";
     private static int numeroUtenti = 0;
 
     public Utente(String nome) {
@@ -18,10 +21,11 @@ public class Utente {
     }
 
     public static int getNumeroUtenti() {
-        return numeroUtenti;
+        return Utente.numeroUtenti;
     }
 
-    public String getNome() {
-        return nome;
+
+    public String getRazza() {
+        return RAZZA;
     }
 }

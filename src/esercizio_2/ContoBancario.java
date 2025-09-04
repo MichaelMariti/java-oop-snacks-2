@@ -11,9 +11,9 @@ package esercizio_2;
 
 public class ContoBancario {
 
-    private double saldo;
+    protected double saldo;
 
-    private String numeroConto;
+    private final String numeroConto;
 
     public ContoBancario(String numeroConto) {
         this.numeroConto = numeroConto;
@@ -24,18 +24,18 @@ public class ContoBancario {
     public void deposita(double importo) {
         if (importo > 0) {
             saldo += importo;
-            System.out.println("Depositato: Euro" + importo);
+            print("Depositato: Euro" + importo + "sul tuo Conto Bancario");
         } else {
-            System.out.println("Importo non valido");
-                    }
+            print("Importo non valido");
+        }
     }
 
     public void preleva(int importo) {
         if (importo > 0 && importo <= saldo) {
             saldo -= importo;
-            System.out.println("Prelevato: Euro" + importo);            
+            print("Prelevato: Euro" + importo);            
         } else {
-            System.out.println("Importo non disponibile");
+            print("Importo non disponibile");
             
         }
 
@@ -47,6 +47,10 @@ public class ContoBancario {
 
     public String getNumeroConto() {
         return numeroConto;
+    }
+
+    protected void print(String msg){
+        System.out.println(msg);
     }
 
     
